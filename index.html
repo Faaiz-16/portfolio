@@ -1,0 +1,891 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ✏️ EDIT: Change the title to your name -->
+    <title>Faaiz Ali | Python Developer</title>
+
+    <!-- Google Fonts: Outfit (body) + Space Mono (code/accent) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===================== NAVIGATION ===================== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <!-- ✏️ EDIT: Change to your initials or short name -->
+        <a href="#home" class="nav-logo">
+          <span class="logo-bracket">&lt;</span>FA<span class="logo-bracket"
+            >/&gt;</span
+          >
+        </a>
+
+        <!-- Hamburger menu (mobile) -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+          <li>
+            <a href="#about" class="nav-link" data-section="about">About</a>
+          </li>
+          <li>
+            <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+          </li>
+          <li>
+            <a href="#projects" class="nav-link" data-section="projects"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a href="#achievements" class="nav-link" data-section="achievements"
+              >Achievements</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="nav-link" data-section="contact"
+              >Contact</a
+            >
+          </li>
+          <!-- ✏️ EDIT: Link your actual resume PDF here -->
+          <li>
+            <a
+              href="Faaiz_Ali_Resume.pdf"
+              download
+              class="nav-cta"
+              target="_blank"
+              >Download Resume</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===================== HERO / HOME ===================== -->
+    <section class="hero" id="home">
+      <!-- Animated background grid -->
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+
+      <div class="hero-container">
+        <!-- Left: Text content -->
+        <div class="hero-content reveal">
+          <p class="hero-greeting">
+            <span class="mono-tag">&lt;hello world /&gt;</span>
+          </p>
+
+          <!-- ✏️ EDIT: Replace with your name -->
+          <h1 class="hero-name">Faaiz <span class="accent">Ali</span></h1>
+
+          <!-- Typing effect target -->
+          <p class="hero-title">
+            <span id="typing-text" class="typed-text"></span
+            ><span class="cursor">|</span>
+          </p>
+
+          <!-- ✏️ EDIT: Update your intro paragraph -->
+          <p class="hero-bio">
+            Master of Computer Applications (MCA) student at Amity University
+            Rajasthan (Batch'27), focused on building clean, efficient Python
+            code and love turning ideas into working software — one commit at a
+            time.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+
+          <!-- Quick social row in hero -->
+          <div class="hero-socials">
+            <!-- ✏️ EDIT: Replace href with your actual profiles -->
+            <a
+              href="https://github.com/Faaiz-16"
+              target="_blank"
+              aria-label="GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              href="https://linkedin.com/in/faaiz-ali-953661312/"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="mailto:alisyedfaaiz@gmail.com" aria-label="Email"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Right: Profile image -->
+        <div class="hero-image reveal reveal-delay-1">
+          <div class="img-frame">
+            <div class="img-border-anim"></div>
+            <!--
+            ✏️ EDIT: Replace "profile.jpg" with your actual photo filename.
+            Place your photo in the same folder as index.html.
+          -->
+            <img
+              src="faaiz_img.jpeg"
+              alt="Profile photo of Faaiz Ali"
+              class="profile-img"
+              onerror="
+                this.src =
+                  'https://placehold.co/400x400/0d1117/4ade80?text=Your+Photo'
+              "
+            />
+          </div>
+
+          <!-- Floating badges around the image -->
+        </div>
+      </div>
+
+      <!-- Scroll hint -->
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono-tag">About Me</span>
+          <h2 class="section-title">Who I Am</h2>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left: paragraphs -->
+          <div class="about-text reveal">
+            <!-- ✏️ EDIT: Update all paragraphs with your real story -->
+            <p>
+              I'm a dedicated <strong>MCA student</strong> with a deep interest
+              in software development, especially in the Python ecosystem. My
+              journey started with curiosity about how websites, application are
+              built, how software works, and it quickly turned into a passion
+              for writing clean, maintainable code.
+            </p>
+            <p>
+              I enjoy building projects that solve real-world problems — from
+              automation scripts to full-stack web applications. Every project I
+              take on teaches me something new, and I believe in learning by
+              doing.
+            </p>
+            <p>
+              When I'm not coding, I explore system design concepts, read tech
+              blogs, and contribute to open-source communities to keep myself
+              sharp and up-to-date with industry trends.
+            </p>
+
+            <!-- Quick facts strip -->
+            <div class="facts-strip">
+              <div class="fact">
+                <!-- ✏️ EDIT: Number of projects -->
+                <span class="fact-number">5+</span>
+                <span class="fact-label">Projects</span>
+              </div>
+              <div class="fact">
+                <!-- ✏️ EDIT: Your degree / field -->
+                <span class="fact-number">MCA</span>
+                <span class="fact-label">Degree</span>
+              </div>
+              <div class="fact">
+                <span class="fact-number">3+</span>
+                <span class="fact-label">Years Coding</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: details card -->
+          <div class="about-card reveal reveal-delay-1">
+            <h3 class="card-heading">Quick Details</h3>
+            <ul class="details-list">
+              <!-- ✏️ EDIT: Replace all values with your real info -->
+              <li>
+                <span class="detail-key">Name</span
+                ><span class="detail-val">Faaiz Ali</span>
+              </li>
+              <li>
+                <span class="detail-key">Degree</span
+                ><span class="detail-val">MCA (IT)</span>
+              </li>
+              <li>
+                <span class="detail-key">University</span
+                ><span class="detail-val">Amity University Rajasthan</span>
+              </li>
+              <li>
+                <span class="detail-key">Graduation</span
+                ><span class="detail-val">2027</span>
+              </li>
+              <li>
+                <span class="detail-key">Focus</span
+                ><span class="detail-val">Python Development</span>
+              </li>
+              <li>
+                <span class="detail-key">Location</span
+                ><span class="detail-val">Jaipur, India</span>
+              </li>
+              <li>
+                <span class="detail-key">Email</span
+                ><span class="detail-val">alisyedfaaiz@gmail.com</span>
+              </li>
+              <li>
+                <span class="detail-key">Status</span
+                ><span class="detail-val available">Open to Opportunities</span>
+              </li>
+            </ul>
+
+            <!-- ✏️ EDIT: Link your resume PDF -->
+            <a
+              href="Faaiz_Ali_Resume.pdf"
+              target="_blank"
+              download
+              class="btn btn-primary btn-full"
+            >
+              <i class="fa-solid fa-download"></i> Download Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SKILLS ===================== -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono-tag">Skills</span>
+          <h2 class="section-title">What I Work With</h2>
+        </div>
+
+        <!-- Skill categories grid -->
+        <div class="skills-grid">
+          <!-- ✏️ EDIT: Adjust skill names and proficiency (0–100) as needed -->
+
+          <!-- Python -->
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+            <h3 class="skill-name">Python</h3>
+            <p class="skill-desc">
+              Core language, OOP, web scraping, data analysis, manipulation and
+              visualization.
+            </p>
+            <div class="skill-tags">
+              <span>Tkinter</span><span>Pandas</span><span>Numpy</span
+              ><span>Flask</span><span>OOP</span><span>APIs</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="85"></div>
+            </div>
+            <span class="progress-label">85%</span>
+          </div>
+
+          <!-- Java -->
+          <div class="skill-card reveal reveal-delay-1">
+            <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
+            <h3 class="skill-name">Java</h3>
+            <p class="skill-desc">Core Java, OOP fundamentals.</p>
+            <div class="skill-tags"><span>OOP</span><span>Servlets</span></div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="70"></div>
+            </div>
+            <span class="progress-label">70%</span>
+          </div>
+
+          <!-- SQL / Database -->
+          <div class="skill-card reveal reveal-delay-2">
+            <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+            <h3 class="skill-name">SQL & Databases</h3>
+            <p class="skill-desc">Relational databases, CRUD operations.</p>
+            <div class="skill-tags">
+              <span>MySQL</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="75"></div>
+            </div>
+            <span class="progress-label">75%</span>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-card reveal">
+            <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+            <h3 class="skill-name">Frontend Development</h3>
+            <p class="skill-desc">
+              Structuring and styling modern, responsive web interfaces.
+            </p>
+            <div class="skill-tags">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span
+              ><span>Bootstrap</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="65"></div>
+            </div>
+            <span class="progress-label">65%</span>
+          </div>
+
+          <!-- Problem Solving -->
+          <div class="skill-card reveal reveal-delay-1">
+            <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="skill-name">Problem Solving</h3>
+            <p class="skill-desc">Logical thinking, debugging.</p>
+            <div class="skill-tags">
+              <span>LeetCode</span><span>HackerRank</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="78"></div>
+            </div>
+            <span class="progress-label">78%</span>
+          </div>
+
+          <!-- Tools & Dev Environment -->
+          <div class="skill-card reveal reveal-delay-2">
+            <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+            <h3 class="skill-name">Dev Tools</h3>
+            <p class="skill-desc">
+              Version control, collaboration, virtual environments & IDEs.
+            </p>
+            <div class="skill-tags">
+              <span>Git</span><span>GitHub</span><span>VS Code</span
+              ><span>PyCharm</span><span>Eclipse</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" data-width="72"></div>
+            </div>
+            <span class="progress-label">72%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono-tag">projects.build</span>
+          <h2 class="section-title">Things I've Built</h2>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Password Manager -->
+          <div class="project-card reveal">
+            <div class="project-header">
+              <div class="project-icon">🔐</div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Faaiz-16"
+                  target="_blank"
+                  rel="noopener"
+                  class="icon-link"
+                  aria-label="GitHub"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Password Manager</h3>
+            <p class="project-desc">
+              A secure desktop app that generates, stores, and retrieves
+              credentials using encrypted JSON storage. Includes a built-in
+              password generator and one-click clipboard copy for fast, secure
+              access.
+            </p>
+            <div class="project-tech">
+              <span>Python</span><span>Tkinter</span><span>JSON</span>
+              <span>Pyperclip</span><span>OOP</span>
+            </div>
+            <div class="project-actions">
+              <a
+                href="https://github.com/Faaiz-16"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline btn-sm"
+              >
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2: Snake Game -->
+          <div class="project-card reveal reveal-delay-1">
+            <div class="project-header">
+              <div class="project-icon">🐍</div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Faaiz-16"
+                  target="_blank"
+                  rel="noopener"
+                  class="icon-link"
+                  aria-label="GitHub"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Snake Game</h3>
+            <p class="project-desc">
+              Classic Snake built in Python with smooth keyboard controls,
+              real-time score tracking, and boundary collision detection — a
+              clean demonstration of game-loop logic and OOP design principles.
+            </p>
+            <div class="project-tech">
+              <span>Python</span><span>Turtle</span><span>OOP</span
+              ><span>Time Module</span>
+            </div>
+            <div class="project-actions">
+              <a
+                href="https://github.com/Faaiz-16"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline btn-sm"
+              >
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3: Image Processing -->
+          <div class="project-card reveal reveal-delay-2">
+            <div class="project-header">
+              <div class="project-icon">📊</div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Faaiz-16"
+                  target="_blank"
+                  rel="noopener"
+                  class="icon-link"
+                  aria-label="GitHub"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">
+              Image Processing &amp; Numerical Computing
+            </h3>
+            <p class="project-desc">
+              A pixel-level image manipulation pipeline using NumPy
+              N-dimensional arrays for filtering, reshaping, and
+              transformations. Results visualized with Matplotlib, with
+              vectorized operations significantly reducing processing overhead
+              over loop-based methods.
+            </p>
+            <div class="project-tech">
+              <span>Python</span><span>NumPy</span><span>Matplotlib</span>
+              <span>SciPy</span><span>PIL</span><span>Skimage</span>
+            </div>
+            <div class="project-actions">
+              <a
+                href="https://github.com/Faaiz-16"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline btn-sm"
+              >
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4: US States Quiz -->
+          <div class="project-card reveal">
+            <div class="project-header">
+              <div class="project-icon">🗺️</div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Faaiz-16"
+                  target="_blank"
+                  rel="noopener"
+                  class="icon-link"
+                  aria-label="GitHub"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">US States Quiz Game</h3>
+            <p class="project-desc">
+              An interactive map-based desktop quiz that challenges users to
+              name all 50 US states. Uses Pandas to load and filter state data
+              and Turtle to render correct guesses onto a live map in real time,
+              wrapped in a clean OOP structure.
+            </p>
+            <div class="project-tech">
+              <span>Python</span><span>Pandas</span><span>Turtle</span
+              ><span>OOP</span>
+            </div>
+            <div class="project-actions">
+              <a
+                href="https://github.com/Faaiz-16"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline btn-sm"
+              >
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 5: Turtle Crossing -->
+          <div class="project-card reveal reveal-delay-1">
+            <div class="project-header">
+              <div class="project-icon">🐢</div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/Faaiz-16"
+                  target="_blank"
+                  rel="noopener"
+                  class="icon-link"
+                  aria-label="GitHub"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title">Turtle Crossing Game</h3>
+            <p class="project-desc">
+              Arcade-style road-crossing game built with Python's Turtle module.
+              Features real-time keyboard controls, collision detection,
+              randomized obstacles, and progressive difficulty — each successful
+              crossing speeds up traffic and raises the stakes.
+            </p>
+            <div class="project-tech">
+              <span>Python</span><span>Turtle</span><span>OOP</span
+              ><span>Time Module</span>
+            </div>
+            <div class="project-actions">
+              <a
+                href="https://github.com/Faaiz-16"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline btn-sm"
+              >
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 6: WIP -->
+          <div class="project-card project-card-wip reveal reveal-delay-2">
+            <div class="project-header">
+              <div class="project-icon">⚙️</div>
+              <span class="wip-badge">In Progress</span>
+            </div>
+            <h3 class="project-title">More Projects Coming Soon</h3>
+            <p class="project-desc">
+              Actively working on new projects to deepen my skills in
+              development. Stay tuned!
+            </p>
+            <div class="project-actions" style="margin-top: auto">
+              <a
+                href="https://github.com/Faaiz-16"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline btn-sm"
+              >
+                <i class="fa-brands fa-github"></i> View All on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ACHIEVEMENTS / CERTIFICATIONS ===================== -->
+    <section class="section achievements-section" id="achievements">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono-tag">04. achievements</span>
+          <h2 class="section-title">Milestones & Certifications</h2>
+        </div>
+
+        <div class="achievements-grid">
+          <!--
+          ✏️ HOW TO EDIT:
+          - Change icon, title, issuer, date, and description
+          - Add or remove cards as needed
+        -->
+
+          <div class="achievement-card reveal">
+            <div class="ach-icon cert-icon">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="ach-body">
+              <span class="ach-type">Certification</span>
+              <h3 class="ach-title">Google Professional AI Certificate</h3>
+              <p class="ach-issuer">Coursera / Google</p>
+              <p class="ach-date">📅 April 2026</p>
+              <p class="ach-desc">
+                Completed 7-course specialization covering AI Fundamentals, AI
+                for Brainstorming and Planning, AI for Research and Insights, AI
+                for Writing and Communicating, AI for Content Creation, AI for
+                Data Analysis, AI for App Building.
+              </p>
+            </div>
+          </div>
+
+          <div class="achievement-card reveal reveal-delay-1">
+            <div class="ach-icon cert-icon">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="ach-body">
+              <span class="ach-type">Certification</span>
+              <h3 class="ach-title">Google AI Essentials Certificate</h3>
+              <p class="ach-issuer">Coursera/Google</p>
+              <p class="ach-date">📅 April 2026</p>
+              <p class="ach-desc">
+                Earned Google's official AI Essentials Certificate. It includes
+                Introduction to AI, Maximize Productivity with AI Tools,
+                Discover the Art of Prompting, Use AI Responsibly, Stay Ahead of
+                the AI Curve.
+              </p>
+            </div>
+          </div>
+
+          <div class="achievement-card reveal reveal-delay-2">
+            <div class="ach-icon cert-icon">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="ach-body">
+              <span class="ach-type">Certification</span>
+              <h3 class="ach-title">
+                Python Certificate (Python Pro Bootcamp)
+              </h3>
+              <p class="ach-issuer">Udemy</p>
+              <p class="ach-date">📅 April 2026</p>
+              <p class="ach-desc">
+                Completed a comprehensive Python certification program covering
+                concepts from beginner to advanced level. Gained hands-on
+                experience in core programming, object-oriented design, data
+                handling, and real-world problem solving by building multiple
+                projects. Developed a strong foundation in writing clean,
+                efficient code and applying Python to practical applications.
+              </p>
+            </div>
+          </div>
+
+          <div class="achievement-card reveal">
+            <div class="ach-icon cert-icon">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="ach-body">
+              <span class="ach-type">Certification</span>
+              <!-- ✏️ EDIT: Add your own achievement here -->
+              <h3 class="ach-title">Full Stack Web Development Certificate</h3>
+              <p class="ach-issuer">Apna College</p>
+              <p class="ach-date">📅 Aug 2025</p>
+              <p class="ach-desc">
+                Completed a Full Stack Web Development certification from Apna
+                College, gaining practical experience in building end-to-end web
+                applications. Learned frontend technologies like HTML, CSS, and
+                JavaScript along with backend development, databases, and API
+                integration. Developed multiple projects to understand
+                real-world workflows, debugging, and deployment, strengthening
+                my ability to create scalable and user-friendly web solutions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag mono-tag">05. contact</span>
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">
+            I'm open to internship and job opportunities. Feel free to reach
+            out!
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left: contact info -->
+          <div class="contact-info reveal">
+            <h3>Get in Touch</h3>
+
+            <!-- ✏️ EDIT: Update with your real contact details -->
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <span class="contact-label">Email</span>
+                <a href="mailto:your@email.com" class="contact-value"
+                  >alisyedfaaiz@gmail.com</a
+                >
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              <div>
+                <span class="contact-label">LinkedIn</span>
+                <a
+                  href="https://www.linkedin.com/in/faaiz-ali-953661312/"
+                  target="_blank"
+                  class="contact-value"
+                  >linkedin.com/in/faaiz-ali-953661312/</a
+                >
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div>
+                <span class="contact-label">GitHub</span>
+                <a
+                  href="https://github.com/Faaiz-16"
+                  target="_blank"
+                  class="contact-value"
+                  >github.com/Faaiz-16</a
+                >
+              </div>
+            </div>
+
+            <!-- Availability badge -->
+            <div class="availability-pill">
+              <span class="green-dot"></span>
+              Available for internship & full-time opportunities
+            </div>
+          </div>
+
+          <!-- Right: contact form -->
+          <div class="contact-form-wrap reveal reveal-delay-1">
+            <!--
+            ✏️ TO MAKE THE FORM WORK:
+            Use a free service like Formspree (https://formspree.io)
+            Replace action="#" with your Formspree endpoint.
+            Example: action="https://formspree.io/f/your-id"
+          -->
+            <form
+              class="contact-form"
+              id="contact-form"
+              action="#"
+              method="POST"
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="John Doe"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Your Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="john@company.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Internship Opportunity / Collaboration"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Hi! I came across your portfolio and would love to connect…"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+              <p class="form-note" id="form-status"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <!-- ✏️ EDIT: Your initials/name -->
+            <a href="#home" class="nav-logo">
+              <span class="logo-bracket">&lt;</span>FA<span class="logo-bracket"
+                >/&gt;</span
+              >
+            </a>
+            <!-- ✏️ EDIT: Your name and tagline -->
+            <p>Faaiz Ali — Aspiring Python Developer</p>
+          </div>
+
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <div class="footer-socials">
+            <!-- ✏️ EDIT: Your real profile links -->
+            <a
+              href="https://github.com/Faaiz-16"
+              target="_blank"
+              aria-label="GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/faaiz-ali-953661312/"
+              target="_blank"
+              aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="mailto:alisyedfaaiz@gmail.com" aria-label="Email"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <!-- ✏️ EDIT: Your name -->
+          <p>© <span id="year"></span> Faaiz Ali. Designed & Built with ❤️.</p>
+          <a href="#home" class="back-to-top" aria-label="Back to top">
+            <i class="fa-solid fa-arrow-up"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
