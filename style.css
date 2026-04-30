@@ -1303,14 +1303,26 @@ ul {
     gap: 4px;
     background: rgba(13, 17, 23, 0.98);
     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     padding: 16px;
     border-bottom: 1px solid var(--border-subtle);
     transform: translateY(-110%);
-    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    /* visibility delays until AFTER the slide-out finishes — prevents invisible
+       links being tappable and stops screen readers seeing the closed menu */
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s linear 0.35s;
     z-index: 999;
   }
   .nav-links.open {
     transform: translateY(0);
+    visibility: visible;   /* immediately visible on open */
+    pointer-events: auto;
+    transition:
+      transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s;       /* no delay — show right away */
   }
 
   .nav-link {
