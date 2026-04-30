@@ -138,24 +138,64 @@
   const navLinks  = document.getElementById('nav-links');
   if (!hamburger || !navLinks) return;
 
-  hamburger.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    hamburger.classList.toggle('open', isOpen);
-    hamburger.setAttribute('aria-expanded', isOpen);
+  /* ── iOS-compatible scroll lock ──────────────────────────────
+     overflow:hidden on <body> is ignored by iOS Safari. Instead
+     we fix the body in place, saving the scroll offset so we can
+     restore it on close without jumping to the top.
+  ─────────────────────────────────────────────────────────────*/
+  let savedScrollY = 0;
 
-    // Prevent body scroll while menu is open
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+  function lockScroll() {
+    savedScrollY = window.scrollY;
+    document.body.style.top      = `-${savedScrollY}px`;
+    document.body.style.position = 'fixed';
+    document.body.style.width    = '100%';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function unlockScroll() {
+    document.body.style.position = '';
+    document.body.style.top      = '';
+    document.body.style.width    = '';
+    document.body.style.overflow = '';
+    window.scrollTo(0, savedScrollY);
+  }
+
+  function openMenu() {
+    navLinks.classList.add('open');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    lockScroll();
+  }
+
+  function closeMenu() {
+    if (!navLinks.classList.contains('open')) return; // already closed
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    unlockScroll();
+  }
+
+  hamburger.addEventListener('click', (e) => {
+    e.stopPropagation(); // prevent the document handler below from firing
+    navLinks.classList.contains('open') ? closeMenu() : openMenu();
   });
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
+  /* ── Close when tapping outside ──────────────────────────────
+     On iOS Safari, 'click' events do NOT bubble from plain
+     non-interactive elements (div, section, body …). Using
+     'touchstart' fixes this while keeping desktop click working.
+     We guard with contains() so tapping inside the open menu
+     (e.g. scrolling through links) doesn't accidentally close it.
+  ─────────────────────────────────────────────────────────────*/
+  function outsideHandler(e) {
     if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+      closeMenu();
     }
-  });
+  }
+
+  document.addEventListener('click',      outsideHandler);
+  document.addEventListener('touchstart', outsideHandler, { passive: true });
 })();
 
 
@@ -264,7 +304,7 @@
 /* ============================================================
    9. CLOSE MOBILE MENU ON NAV-LINK CLICK
    — When a nav link is tapped on mobile, close the menu
-      and re-enable body scroll
+      and restore scroll (including the iOS-fixed-body approach)
    ============================================================ */
 (function closeMenuOnClick() {
   const navLinks  = document.getElementById('nav-links');
@@ -273,10 +313,18 @@
 
   navLinks.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
+      if (!navLinks.classList.contains('open')) return;
       navLinks.classList.remove('open');
       hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
+
+      // Undo the iOS scroll lock set in initMobileMenu
+      const scrollY = parseInt(document.body.style.top || '0') * -1;
+      document.body.style.position = '';
+      document.body.style.top      = '';
+      document.body.style.width    = '';
       document.body.style.overflow = '';
+      window.scrollTo(0, scrollY);
     });
   });
 })();
